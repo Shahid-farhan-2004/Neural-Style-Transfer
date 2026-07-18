@@ -17,9 +17,10 @@ def load_image(path):
     image=transform(image).unsqueeze(0)
     return image.to(torch.float)
 
-content=load_image("data/shahid.jpg")
-
-style=load_image("data/anime.jpg")
+#image that you want to change the style
+content=load_image("")
+#image of which style you want
+style=load_image("")
 
 vgg=models.vgg19(weights=VGG19_Weights.DEFAULT).features.eval()
 for param in vgg.parameters():
